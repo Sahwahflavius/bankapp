@@ -31,10 +31,12 @@ const home = ()=>
 
 
             </div>
+
             <Rightsidebar
-            user={loggedIn}
-            transactions={[]}
-            banks={[]}/>
+                    user={loggedIn}
+                    transactions={[]}
+                    banks={[{currentBalance:1000.93}, {currentBalance:10000}]}
+            />
         </section>
 
     )
