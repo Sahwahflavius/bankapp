@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-import { Inter, IBM_Plex_Serif } from "next/font/google";
 
 export default function RootLayout({
   children,
@@ -8,7 +6,8 @@ export default function RootLayout({
 }>) {
   return (
     <main>
-        {children}
+      
+      {children}
     </main>
   );
 }

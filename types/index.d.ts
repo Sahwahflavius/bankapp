@@ -26,7 +26,6 @@ declare type LoginUser = {
 };
 
 declare type User = {
-  loggedIn: any;
   $id: string;
   email: string;
   userId: string;

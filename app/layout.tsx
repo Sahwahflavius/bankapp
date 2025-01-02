@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Serif } from "next/font/google";
+import { Inter, IBM_Plex_Serif} from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter-sans",
-  subsets: ["latin"],
+const inter = Inter({subsets: ["latin"],
+  variable:'--font-inter'
 });
-const ibmplexserif=IBM_Plex_Serif({
+const ibmPlexSerif = IBM_Plex_Serif({
   subsets:['latin'],
   weight:['400', '700'],
   variable:'--font-ibm-plex-serif'
 })
 
 export const metadata: Metadata = {
-  title: "VERIZONS",
-  description: "Verizon is a new banking web developed in Africa purposefully for any type of payment from all country round the world",
+  title: "veriPay",
+  description: "VeriPay is generated and powered by verizon tech ©  that allows you to manage a bank services",
   icons:{
     icon:'/icons/logo.svg'
   }
+
 };
 
 export default function RootLayout({
@@ -27,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${ibmplexserif.variable}`}
-      >
+      <body className={`${inter.variable}${ibmPlexSerif.variable}`}>
         {children}
       </body>
     </html>
