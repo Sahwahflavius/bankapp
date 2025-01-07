@@ -29,6 +29,7 @@ declare type User = {
   $id: string;
   email: string;
   userId: string;
+  user:string;
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
   firstName: string;
@@ -124,6 +125,7 @@ declare type AddFundingSourceParams = {
 };
 
 declare type NewDwollaCustomerParams = {
+  user:string;
   firstName: string;
   lastName: string;
   email: string;
@@ -178,14 +180,14 @@ declare interface PlaidLinkProps {
   dwollaCustomerId?: string;
 }
 
-// declare type User = sdk.Models.Document & {
+ declare type User = sdk.Models.Document & {
 //   accountId: string;
 //   email: string;
-//   name: string;
+  name: string;
 //   items: string[];
 //   accessToken: string;
 //   image: string;
-// };
+ };
 
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";

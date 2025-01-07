@@ -2,6 +2,7 @@
 import { type ClassValue, clsx } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
+import { z } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -136,9 +137,8 @@ export function countTransactionCategories(
   let totalCount = 0;
 
   // Iterate over each transaction
-  transactions &&
-    transactions.forEach((transaction) => {
-      // Extract the category from the transaction
+     transactions &&transactions.forEach((transaction) => {
+      // Extract the category from the transaction//
       const category = transaction.category;
 
       // If the category exists in the categoryCounts object, increment its count
@@ -193,3 +193,15 @@ export const getTransactionStatus = (date: Date) => {
 
   return date > twoDaysAgo ? "Processing" : "Success";
 };
+export const authFormSchema =z.object({
+  firstName:z.string().min(3),
+  lastName:z.string().min(3),
+  address:z.string().max(50),
+  state:z.string().min(2).max(3),
+  postalCode:z.string().min(3).max(5),
+  ssn:z.string().min(2).max(3),
+  dateOfBirth:z.string().min(3),
+  phone:z.string().min(9),
+  email:z.string().email(),
+  password:z.string().min(8)
+})
